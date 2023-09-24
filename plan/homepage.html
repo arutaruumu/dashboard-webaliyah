@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>wessite aliyah</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='homepage.css'>
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #61603c;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #504f31;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src = "wp2468647.png" class="banner"/>
+        <a href="#" class="logo"><img src="logo.png"></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Tentang Kami</a></li>
+                <li><a href="#" class="active">Program</a></li>
+                <li><a href="#" class="active">Kegiatan</a></li>
+                <li><a href="#" class="active">Berita</a></li>
+                <li><a href="#" class="active">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" 
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" 
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop();
+            if (scroll > 0){
+                $("header").addClass('scrolled');
+            }
+            else {
+                $("header").removeClass('scrolled');
+            }
+        })
+    </script>
+
+    <!-- login -->
+    <div class="container">
+        <div class="parallax"></div>
+        <div class="login-wrapper">
+            <span class="login-side">
+                <a href="#" title="Logo">
+                    <img class="logo" src="#" alt="Logo"/>
+                </a>
+                <form class="user-form">
+                    <div class="login-welcome-row">
+                        <h1>Welcome back &#x1F44F;</h1>
+                        <p>Please enter your details!</p>
+                    </div>
+                    <div class="social-row">
+                        <a href="#" title="Use Goggle">
+                            <img src="asset/Goole.png" alt="Google">
+                            Log in with Goggle
+                        </a>
+                        <a href="#" title="Use Apple">
+                            <img src="asset/Apple.png" alt="Apple">
+                            Log in with Apple
+                        </a>
+                    </div>
+                    <!-- here -->
+                    <div class="divinder">
+                        <span class="divider-line"></span>
+                    </div>
+                    <div class="text-field">
+                        <label for="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your Email"
+                            required
+                        >
+                        <img
+                            alt="Email Icon"
+                            title="Email Icon"
+                            src="asset/email.png"
+                        />
+                    </div>
+                    <div class="text-field">
+                        <label for="password">Password:</label>
+                        <input
+                            id="password"
+                            type="password"
+                            name="password"
+                            placeholder="Your Password"
+                            title="Minimum 6 character at least 1 Alphabet and 1 Number"
+                            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+                            required
+                        >
+                        <img
+                            alt="Password Icon"
+                            title="Password Icon"
+                            src=""
+                        >
+                    </div>
+                </form>
+            </span>
+            <div class="table-login">
+                <section>
+                    <ul>
+                        <li class="status"></li>
+                        <li class="nama"></li>
+                        <li class="password"></li>,
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <script>
+            let loginForm = document.querySelector(".user-form");
+
+            loginForm.removeEventListener("submit", (e) =>{
+                e.preventDefault();
+                let email = document.getElementById("email");
+                let password = document.getElementById("password");
+
+                console.log('Email:', email.value);
+                console.log('Password:', password.value);
+            });
+        </script>
+    </div>
+    
+</body>
+</html>
